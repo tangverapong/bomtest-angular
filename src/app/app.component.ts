@@ -10,7 +10,7 @@ export class AppComponent {
   myObj;
 
   ngOnInit() {
-    let myAr = [1, 2, 3, 4, 5];
+    let myAr = [1, 2, 3, 4, 5, 6];
 
     let myAr1 = myAr.filter(this.myFiler).map(this.myMapWithIndex);
     let myAr2 = myAr.map(this.myMapWithIndex);
