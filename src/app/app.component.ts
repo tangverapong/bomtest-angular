@@ -6,25 +6,24 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
+  //========================
+  //data model section
+  //========================
   myNumber;
   myObj;
 
+  //========================
+  //page event model section
+  //========================
   ngOnInit() {
-    let myAr = [1, 2, 3, 4, 5, 6];
-
-    let myAr1 = myAr.filter(this.myFiler).map(this.myMapWithIndex);
-    let myAr2 = myAr.map(this.myMapWithIndex);
-    this.myNumber = myAr1;
-
-    this.setObj();
+    this.testMapNumberArray();
+    this.testMapObj();
   }
 
-  myMap = n => n * 3;
-  myFiler = n => n > 1;
-
-  myMapWithIndex = (v, i) => v * i;
-
-  setObj(): void {
+  //========================
+  // function section
+  //========================
+  testMapObj(): void {
     let tempObj = {
       v1: "aaa",
       v2: "bbb"
@@ -40,6 +39,17 @@ export class AppComponent {
     });
 
     this.myObj = { ...tempObj, v2: "ccc" };
+  }
+
+  myMap = n => n * 3;
+  myMapWithIndex = (v, i) => v * i;
+  myFiler = n => n > 1;
+  testMapNumberArray(): void {
+    let myAr = [1, 2, 3, 4, 5, 6];
+
+    let myAr1 = myAr.filter(this.myFiler).map(this.myMapWithIndex);
+    let myAr2 = myAr.map(this.myMapWithIndex);
+    this.myNumber = myAr1;
   }
 }
 
